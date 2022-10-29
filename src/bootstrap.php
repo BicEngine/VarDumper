@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @codingStandardsIgnoreStart
+ */
+
 declare(strict_types=1);
 
 use Bic\VarDumper\Caster\FFICDataCaster;
@@ -12,4 +16,3 @@ use Symfony\Component\VarDumper\Cloner\AbstractCloner;
 AbstractCloner::$defaultCasters[CType::class] = [FFICTypeCaster::class, 'castCType'];
 /** @psalm-suppress MixedArrayAssignment */
 AbstractCloner::$defaultCasters[CData::class] = [FFICDataCaster::class, 'castCData'];
-
