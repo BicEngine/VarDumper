@@ -10,7 +10,7 @@
 
 ## Installation
 
-Library is available as composer repository and can be installed using the 
+Library is available as composer repository and can be installed using the
 following command in a root of your project.
 
 - `composer require bic-engine/var-dumper`
