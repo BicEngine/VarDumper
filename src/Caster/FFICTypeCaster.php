@@ -9,7 +9,7 @@ use Symfony\Component\VarDumper\Caster\Caster;
 use Symfony\Component\VarDumper\Cloner\Stub;
 
 /**
- * @package dumper
+ * @psalm-suppress all
  */
 final class FFICTypeCaster extends FFICaster
 {

@@ -8,7 +8,7 @@ use FFI\CData;
 use FFI\CType;
 
 /**
- * @package dumper
+ * @psalm-suppress all
  */
 abstract class FFICaster
 {
