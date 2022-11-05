@@ -69,7 +69,6 @@ final class FFICDataCaster extends FFICaster
     private static function castFFIPointer(Stub $stub, CType $type, CData $data): array
     {
         $reference = $type->getPointerType();
-        $stub->class = 'FFI::addr<' . $reference->getName() . '>';
 
         if (self::isStructLike($reference)) {
             return self::castFFIStructLike($stub, $reference, $data[0]);
@@ -79,14 +78,14 @@ final class FFICDataCaster extends FFICaster
             return self::castFFIFunction($stub, $reference);
         }
 
-        $stub->type = Stub::TYPE_REF;
-
         if ($reference->getKind() === CType::TYPE_CHAR) {
             $stub->class = '(unsafe access)';
             return [];
         }
 
-        return FFICTypeCaster::castCType($reference, [], $stub);
+        $stub->class = 'FFI::addr<' . $reference->getName() . '>';
+
+        return [0 => $data[0]];
     }
 
     private static function castFFIFunction(Stub $stub, CType $type): array
